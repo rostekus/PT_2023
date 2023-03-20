@@ -1,7 +1,4 @@
-﻿
-using System;
-
-namespace PTTaskZero
+﻿namespace PTTaskZero
 {
 
     public class StringManipulator

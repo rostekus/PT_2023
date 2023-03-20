@@ -94,7 +94,7 @@ namespace TestPTTaskZero
         [TestMethod]
         public void TestConcatenateStringsgArray()
         {
-            string[] input = {"Hello", " World!"};
+            string[] input = { "Hello", " World!" };
             string want = "Hello World!";
             string got = StringManipulator.ConcatenateStrings(input);
             Assert.AreEqual(want, got);
@@ -104,7 +104,7 @@ namespace TestPTTaskZero
         [TestMethod]
         public void TestConcatenateStringsgEmptyArray()
         {
-            string[] input = {};
+            string[] input = { };
             string want = "";
             string got = StringManipulator.ConcatenateStrings(input);
             Assert.AreEqual(want, got);
@@ -114,7 +114,7 @@ namespace TestPTTaskZero
         [TestMethod]
         public void TestConcatenateStringsgArrayEmptyStrings()
         {
-            string[] input = {"", "", "" ,"" };
+            string[] input = { "", "", "", "" };
             string want = "";
             string got = StringManipulator.ConcatenateStrings(input);
             Assert.AreEqual(want, got);
