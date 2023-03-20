@@ -1,5 +1,5 @@
 # Programming Technology Lab
-
+[![Tests](https://github.com/rostekus/PT_2023/actions/workflows/tests.yaml/badge.svg)](https://github.com/rostekus/PT_2023/actions/workflows/tests.yaml)
 ## Team
 
 | Name Surname (initials) | GUID                                     |
