@@ -16,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\PTTaskZero\PTTaskZero.csproj" />
+    <ProjectReference Include="..\PTTask\PTTask.csproj" />
   </ItemGroup>
 
 </Project>
