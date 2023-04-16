@@ -1,6 +1,6 @@
 namespace DataAccess.API;
 
-public interface ICatalog
+public interface IBook
 {
     string Title { get; set; }
     string Author { get; set; }
