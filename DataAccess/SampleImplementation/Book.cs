@@ -1,6 +1,8 @@
-namespace DataAccess.SampleImlementation;
+using DataAccess.API;
 
-public class Book : ICatalog
+namespace DataAccess.SampleImplementation;
+
+public class Book : IBook
 {
     public string Title { get; set; }
     public string Author { get; set; }

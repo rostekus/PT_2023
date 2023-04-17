@@ -1,6 +1,6 @@
 namespace DataAccess.API;
 
-public interface ICatalogRepository : IRepository<IBook>
+public interface IBookRepository : IRepository<IBook>
 {
     
 }

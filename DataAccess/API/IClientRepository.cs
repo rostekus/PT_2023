@@ -1,6 +1,6 @@
 namespace DataAccess.API;
 
-public interface IClientRepository
+public interface IClientRepository :IRepository<IClient>
 {
     
 }

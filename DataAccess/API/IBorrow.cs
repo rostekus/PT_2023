@@ -1,6 +1,6 @@
 namespace DataAccess.API;
 
-public interface IRent : ILibraryEvent
+public interface IBorrow : ILibraryEvent
 {
     IState State { get; }
     IClient Client { get; }

@@ -1,6 +1,7 @@
 namespace DataAccess.API;
 
-public interface IReturn
+public interface IReturn : ILibraryEvent
 {
-    
+    IState State { get; }
+    IClient Client { get; }
 }
