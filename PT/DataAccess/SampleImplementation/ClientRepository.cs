@@ -11,11 +11,11 @@ public class ClientRepository : IClientRepository
         _context = context;
     }
 
-    public List<IClient> GetAll() => _context._Clients;
+    public List<IClient> GetAll() => _context.Clients;
     public IClient GetById(string guid)
     {
         // check if user exists with the same guid in repository
-        var client = this._context._Clients.Find(checkClient => checkClient.Guid == guid);
+        var client = this._context.Clients.Find(checkClient => checkClient.Guid == guid);
         if (client== null)
         {
             throw new Exception("No client with specified GUID");
@@ -26,19 +26,19 @@ public class ClientRepository : IClientRepository
 
     public void Add(IClient entity)
     {
-        this._context._Clients.Add(entity);
+        this._context.Clients.Add(entity);
     }
 
     public void Update(IClient entity)
     {
-        for (var index = 0; index < _context._Clients.Count; index++)
+        for (var index = 0; index < _context.Clients.Count; index++)
         {
-            var user = _context._Clients[index];
+            var user = _context.Clients[index];
             if (user.Guid != entity.Guid)
                 continue;
 
-            _context._Clients.Remove(user);
-            _context._Clients.Add(entity);
+            _context.Clients.Remove(user);
+            _context.Clients.Add(entity);
             return;
         }
     }
@@ -47,23 +47,23 @@ public class ClientRepository : IClientRepository
     public void Create(IClient client)
     {
         // check if user exists with the same guid in repository
-        var clientDuplicate = this._context._Clients.Find(checkClient => checkClient.Guid == client.Guid);
+        var clientDuplicate = this._context.Clients.Find(checkClient => checkClient.Guid == client.Guid);
         if (clientDuplicate == null)
         {
             throw new Exception("Client with that GUID exists in repository");
         }
-        _context._Clients.Add(client);
+        _context.Clients.Add(client);
     }
 
     public void Delete(IClient client)
     {
-        var foundClient = this._context._Clients.Find(checkClient => checkClient.Guid == client.Guid);
+        var foundClient = this._context.Clients.Find(checkClient => checkClient.Guid == client.Guid);
         if (client== null)
         {
             throw new Exception("No client with specified GUID");
         }
 
-        this._context._Clients.RemoveAll(checkClient => checkClient.Guid == client.Guid);
+        this._context.Clients.RemoveAll(checkClient => checkClient.Guid == client.Guid);
 
     }
     
