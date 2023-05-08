@@ -5,7 +5,7 @@ namespace DataAccess.SampleImplementation;
 internal class LibraryDataContext : ILibraryDataContext
 {
     public List<IClient> Clients { get; set; }
-    public List<IBook> Books { get; set; }
+    public Dictionary<string, IBook> Books { get; set; } 
     public List<ILibraryEvent> Events { get; set; }
     public List<IState> States { get; }
  
@@ -13,7 +13,7 @@ internal class LibraryDataContext : ILibraryDataContext
     {
         this.Clients = new List<IClient>();
 
-        this.Books = new List<IBook>();
+        this.Books = new Dictionary<string, IBook>();
 
         this.States = new List<IState>();
 
