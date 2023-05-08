@@ -3,7 +3,7 @@ using DataAccess.API;
 using DataAccess.SampleImplementation;
 namespace BusinessLogic.SampleImplementation;
 
-public class LibraryService : ILibraryBusinessLogic
+internal class LibraryService : ILibraryBusinessLogic
 {
     private IStateRepository _States;
     private  IClientRepository _Clients;

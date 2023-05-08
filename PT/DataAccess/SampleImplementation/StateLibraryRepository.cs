@@ -2,7 +2,7 @@ using DataAccess.API;
 
 namespace DataAccess.SampleImplementation;
 
-public class StateLibraryRepository : IStateRepository
+internal class StateLibraryRepository : IStateRepository
 {
     private readonly LibraryDataContext _context;
     
