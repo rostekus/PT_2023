@@ -2,7 +2,7 @@ using DataAccess.API;
 
 namespace DataAccess.SampleImplementation;
 
-public class ClientRepository : IClientRepository
+internal class ClientRepository : IClientRepository
 {
     private readonly LibraryDataContext _context;
     

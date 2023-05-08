@@ -2,7 +2,7 @@ using DataAccess.API;
 
 namespace DataAccess.SampleImplementation;
 
-public class State :IState
+internal class State :IState
 {
     public string Guid { get; private set; }
     public string BookId { get; set; }

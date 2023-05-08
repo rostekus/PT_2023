@@ -1,8 +1,8 @@
 using DataAccess.API;
 
-namespace DataAccess.SampleImplementation;
+namespace BusinessLogic.SampleImplementation;
 
-public class Return : IReturn
+internal class Return : IReturn
 {
     public string Guid { get; }
     public DateTime Time { get; }

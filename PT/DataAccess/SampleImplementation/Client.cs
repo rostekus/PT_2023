@@ -2,7 +2,7 @@ using DataAccess.API;
 
 namespace DataAccess.SampleImplementation;
 
-public class Client : IClient
+internal class Client : IClient
 {
     public string Guid { get; private set; }
     public string Name { get; set; }

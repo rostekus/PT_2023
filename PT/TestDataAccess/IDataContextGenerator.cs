@@ -3,7 +3,7 @@ using DataAccess.SampleImplementation;
 
 namespace TestDataAccess;
 
-public interface IDataContextGenerator
+internal interface IDataContextGenerator
 {
     LibraryDataContext Generate();
 }

@@ -6,7 +6,7 @@ using TestDataAccess;
 
 namespace TestDataAccess;
 
-public class RandomLibraryDataContextGenerator : IDataContextGenerator
+internal class RandomLibraryDataContextGenerator : IDataContextGenerator
 {
     private const int NumClients = 3;
     private const int NumBooks = 3;
@@ -29,7 +29,7 @@ public class RandomLibraryDataContextGenerator : IDataContextGenerator
         for (var i = 0; i < NumBooks; i++)
         {
             string bookId = GetRandomClientId();
-            libraryContext.Books.Add(new Book(
+            libraryContext.Books.Add(bookId, new Book(
                 GetRandomTitle(),
                 GetRandomName(),
                 bookId));
@@ -71,7 +71,8 @@ public class RandomLibraryDataContextGenerator : IDataContextGenerator
     
     private string GetRandomClientId()
     {
-        return (_random.Next(NumClients) + 1).ToString();
+        Guid uuid = Guid.NewGuid();
+        return uuid.ToString();
     }
     
     private string GetRandomString(int length = 8)

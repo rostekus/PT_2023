@@ -2,7 +2,7 @@ using DataAccess.API;
 
 namespace DataAccess.SampleImplementation;
 
-public class LibraryEventRepository : ILibraryEventRepository
+internal class LibraryEventRepository : ILibraryEventRepository
 {
     private readonly LibraryDataContext _context;
     
