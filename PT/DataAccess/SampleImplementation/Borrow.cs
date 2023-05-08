@@ -2,7 +2,7 @@ using DataAccess.API;
 
 namespace DataAccess.SampleImplementation;
 
-public class Borrow : IBorrow
+internal class Borrow : IBorrow
 {
     public Borrow(string guid, DateTime time, IState state, IClient client, TimeSpan rentingTime)
     {

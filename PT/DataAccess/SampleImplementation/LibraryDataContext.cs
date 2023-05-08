@@ -2,7 +2,7 @@ using DataAccess.API;
 
 namespace DataAccess.SampleImplementation;
 
-public class LibraryDataContext : ILibraryDataContext
+internal class LibraryDataContext : ILibraryDataContext
 {
     public List<IClient> Clients { get; set; }
     public List<IBook> Books { get; set; }
