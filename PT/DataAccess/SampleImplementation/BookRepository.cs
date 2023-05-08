@@ -9,18 +9,18 @@ internal class BookRepository : IBookRepository
     {
         _context = context;
     }
-
-    public IEnumerable<IBook> GetAll() => _context.Books.Values;
+    
+    public List<IBook> GetAll() => this._context.Books.Values.ToList();
     
     public IBook GetById(string guid)
     {
-        var book = this._context.Books[guid]
+        var book = this._context.Books[guid];
         return book;
     }
 
     public void Add(IBook entity)
     {
-        this._context.Books.Add(entity.Guid, entity);
+        this._context.Books[entity.Guid] =entity;
     }
 
     public void Update(IBook entity)
@@ -31,7 +31,7 @@ internal class BookRepository : IBookRepository
 
     public void Create(IBook book)
     {
-       this._context.Books.Add(entity.Guid, entity); 
+       this._context.Books.Add(book.Guid, book); 
     }
 
     public void Delete(IBook book)
