@@ -1,6 +1,6 @@
 using DataAccess.API;
 
-namespace DataAccess.SampleImplementation;
+namespace BusinessLogic.SampleImplementation;
 
 internal class Borrow : IBorrow
 {
