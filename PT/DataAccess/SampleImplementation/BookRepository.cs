@@ -4,8 +4,8 @@ namespace DataAccess.SampleImplementation;
 
 internal class BookRepository : IBookRepository
 {
-    private readonly LibraryDataContext _context;
-    public BookRepository(LibraryDataContext context)
+    private readonly ILibraryDataContext _context;
+    public BookRepository(ILibraryDataContext context)
     {
         _context = context;
     }

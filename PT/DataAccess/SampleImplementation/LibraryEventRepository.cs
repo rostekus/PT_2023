@@ -4,9 +4,9 @@ namespace DataAccess.SampleImplementation;
 
 internal class LibraryEventRepository : ILibraryEventRepository
 {
-    private readonly LibraryDataContext _context;
+    private readonly ILibraryDataContext _context;
     
-    public LibraryEventRepository(LibraryDataContext context)
+    public LibraryEventRepository(ILibraryDataContext context)
     {
         _context = context;
     }

@@ -4,9 +4,9 @@ namespace DataAccess.SampleImplementation;
 
 internal class StateLibraryRepository : IStateRepository
 {
-    private readonly LibraryDataContext _context;
+    private readonly ILibraryDataContext _context;
     
-    public StateLibraryRepository(LibraryDataContext context)
+    public StateLibraryRepository(ILibraryDataContext context)
     {
         _context = context;
     }

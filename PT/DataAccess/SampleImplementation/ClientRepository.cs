@@ -4,9 +4,9 @@ namespace DataAccess.SampleImplementation;
 
 internal class ClientRepository : IClientRepository
 {
-    private readonly LibraryDataContext _context;
+    private readonly ILibraryDataContext _context;
     
-    public ClientRepository(LibraryDataContext context)
+    public ClientRepository(ILibraryDataContext context)
     {
         _context = context;
     }
