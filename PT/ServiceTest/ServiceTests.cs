@@ -1,5 +1,5 @@
 using Service.API;
-using ServiceTest.MockItems;
+using ServiceTest.FakeItems;
 
 namespace ServiceTest
 {
@@ -10,7 +10,7 @@ namespace ServiceTest
         [TestMethod]
         public async Task UserServiceTests()
         {
-            IUserCRUD userCrud = new MockUserCRUD();
+            IUserCRUD userCrud = new FakeUserCRUD();
             //int id, string firstName, string lastName
             await userCrud.AddUser(1, "John", "Doe");
             //int id
@@ -39,7 +39,7 @@ namespace ServiceTest
         [TestMethod]
         public async Task ProductServiceTests()
         {
-            IProductCRUD productCrud = new MockProductCRUD();
+            IProductCRUD productCrud = new FakeProductCRUD();
             await productCrud.AddProduct(1, "Moby Dick", "XZY", 3.5f);
 
             IProductDTO product = await productCrud.GetProduct(1);
@@ -69,12 +69,12 @@ namespace ServiceTest
         [TestMethod]
         public async Task StateServiceTests()
         {
-            IProductCRUD productCrud = new MockProductCRUD();
+            IProductCRUD productCrud = new FakeProductCRUD();
             await productCrud.AddProduct(1, "Moby Dick", "XZY", 3.5f);
 
             IProductDTO product = await productCrud.GetProduct(1);
 
-            IStateCRUD stateCrud = new MockStateCRUD();
+            IStateCRUD stateCrud = new FakeStateCRUD();
             //int id, int productId
             await stateCrud.AddState(1, product.Id, true);
 
@@ -101,26 +101,26 @@ namespace ServiceTest
         [TestMethod]
         public async Task PlaceEventServiceTests()
         {
-            IProductCRUD productCrud = new MockProductCRUD();
+            IProductCRUD productCrud = new FakeProductCRUD();
             //int id, string productName, string productDescription, float price
             await productCrud.AddProduct(1, "Moby Dick", "XZY", 3.5f);
 
             IProductDTO product = await productCrud.GetProduct(1);
 
-            IStateCRUD stateCrud = new MockStateCRUD();
+            IStateCRUD stateCrud = new FakeStateCRUD();
             //int id, int productId
             await stateCrud.AddState(1, product.Id, true);
 
             IStateDTO state = await stateCrud.GetState(1);
 
-            IUserCRUD userCrud = new MockUserCRUD();
+            IUserCRUD userCrud = new FakeUserCRUD();
 
             //int id, string firstName, string lastName
             await userCrud.AddUser(1, "John", "Doe");
 
             IUserDTO user = await userCrud.GetUser(1);
 
-            IEventCRUD eventCrud = new MockEventCRUD();
+            IEventCRUD eventCrud = new FakeEventCRUD();
             await eventCrud.AddEvent(1, state.StateId, user.Id, "PlacedEvent");
 
             user = await userCrud.GetUser(1);
@@ -137,25 +137,25 @@ namespace ServiceTest
         [TestMethod]
         public async Task PayedEventServiceTests()
         {
-            IProductCRUD productCrud = new MockProductCRUD();
+            IProductCRUD productCrud = new FakeProductCRUD();
 
             await productCrud.AddProduct(1, "Moby Dick", "XZY", 2);
 
             IProductDTO product = await productCrud.GetProduct(1);
 
-            IStateCRUD stateCrud = new MockStateCRUD();
+            IStateCRUD stateCrud = new FakeStateCRUD();
 
             await stateCrud.AddState(1, product.Id, true);
 
             IStateDTO state = await stateCrud.GetState(1);
 
-            IUserCRUD userCrud = new MockUserCRUD();
+            IUserCRUD userCrud = new FakeUserCRUD();
 
             await userCrud.AddUser(1, "John", "Doe");
 
             IUserDTO user = await userCrud.GetUser(1);
 
-            IEventCRUD eventCrud = new MockEventCRUD();
+            IEventCRUD eventCrud = new FakeEventCRUD();
 
             await eventCrud.AddEvent(1, state.StateId, user.Id, "PlacedEvent");
 
